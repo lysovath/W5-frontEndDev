@@ -13,11 +13,12 @@ export const myData = {
 };
 
 // TODO Edit the User component code to be able to display DIFFERENT users !
-export function User() {
+export function User(prop) {
+  console.log(JSON.stringify(prop));
   return (
     <div id="user" data-testid="user">
-      <h2>TODO: FIRST NAME LAST NAME</h2>
-      <p>TODO: TITLE</p>
+      <h2>{prop.user.firstName} {prop.user.lastName}</h2>
+      <p>{prop.user.title}</p>
     </div>
   );
 }
@@ -27,8 +28,8 @@ function App() {
     <div id="app">
       <h1>PNV React Team !!</h1>
       <p>Here are some PNV React masters, do you know them?</p>
-      <User /> {/* This line needs some changes*/}
-      <User /> {/* This line needs some changes*/}
+      <User user={vinhData}/> {/* This line needs some changes*/}
+      <User user={myData}/> {/* This line needs some changes*/}
     </div>
   );
 }
